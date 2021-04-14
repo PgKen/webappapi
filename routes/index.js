@@ -874,5 +874,14 @@ router.get('/editnews/:id',(req,res)=>{
   })
 })
 
+router.get('/qalist',(req,res)=>{
+  let sql = "SELECT * FROM qa WHERE status = 1"
+  conw.query(sql,(err,resp)=>{
+    if(err) throw console.log(err);
+    console.log(resp);
+    res.send(resp)
+  })
+})
+
 
 module.exports = router;
